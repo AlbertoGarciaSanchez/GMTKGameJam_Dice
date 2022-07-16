@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionManager : MonoBehaviour
+public class InteractionManager : PauseEntity
 {
     // Interactable Sprite indicator
     public GameObject interactableIndicator;
@@ -18,7 +18,11 @@ public class InteractionManager : MonoBehaviour
 
     void Update()
     {
-        interactionKeyPressed = Input.GetKeyDown(interactionKey);
+        interactionKeyPressed = false;
+
+        if(!CheckPauseStatus()){
+            interactionKeyPressed = Input.GetKeyDown(interactionKey);
+        }
 
         if(interactionKeyPressed){
             List<Interactable> objectsToBeRemoved = new List<Interactable>(){ };

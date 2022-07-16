@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : PauseEntity
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
@@ -14,8 +14,21 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     private bool isAttacking = false;
 
+    // Overwrite pauseChanged method to disable animator
+    public override void pauseChanged(bool newPause){
+        base.pauseChanged(newPause);
+
+        animator.enabled = !pauseStatus;
+    }
+
     void Update()
     {
+        // TO BE REMOVED
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            EventManager.instance.OnPauseChangedAction(!pauseStatus);
+        }
+
+        // Get movement axis and if the user is attacking.
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -29,6 +42,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Check Pause status to avoid movement.
+        if(base.CheckPauseStatus()){
+            return;
+        }
+
         if(!isAttacking){
             rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime); 
         }
