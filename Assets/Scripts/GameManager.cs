@@ -26,6 +26,7 @@ public class GameManager: MonoBehaviour {
     {
         if (instance == null){
             instance = this;
+            inventory = new Dictionary<string, int>(){};
             DontDestroyOnLoad(this.gameObject);
         }else
             Object.Destroy(this);

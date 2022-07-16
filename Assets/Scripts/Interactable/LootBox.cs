@@ -19,6 +19,9 @@ public class LootBox : MonoBehaviour
 
     public Collectable ResolveLootBox()
     {
+        Debug.Log("lootBox: " + lootBox);
+        Debug.Log("allItems: " + allItems);
+        Debug.Log("probabilitiesPerItem: " + probabilitiesPerItem);
         return lootBox.GetElement(allItems, probabilitiesPerItem);
     }
 }

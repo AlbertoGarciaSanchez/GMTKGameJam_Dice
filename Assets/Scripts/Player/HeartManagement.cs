@@ -16,6 +16,7 @@ public class HeartManagement : MonoBehaviour
     {
         EventManager.instance.OnPauseChanged += pauseChanged;
         EventManager.instance.OnStopRolling += stopRolling;
+        EventManager.instance.OnHeartUp += onHeartUp;
 
         // Get slots
         heartSlots = new List<GameObject>(GameObject.FindGameObjectsWithTag(diceSlotTagName));
@@ -28,6 +29,13 @@ public class HeartManagement : MonoBehaviour
     void OnDestroy(){
         EventManager.instance.OnPauseChanged -= pauseChanged;
         EventManager.instance.OnStopRolling -= stopRolling;
+        EventManager.instance.OnHeartUp -= onHeartUp;
+    }
+
+    void onHeartUp(){
+        GameManager.instance.currentHearts += 1;
+
+        regenerateHearts();
     }
 
     void pauseChanged(bool pause)
