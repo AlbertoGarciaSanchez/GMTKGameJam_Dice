@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DiceSlot
   - Floor
+  - Canvas
   layers:
   - Default
   - TransparentFX

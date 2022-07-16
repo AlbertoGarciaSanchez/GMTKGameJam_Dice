@@ -9,10 +9,12 @@ public class FollowPlayer : MonoBehaviour
 
     public void Initialize(){
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        
     }
       
     void Update () 
     {
         transform.position = new Vector3 (player.position.x + offset.x, player.position.y + offset.y, offset.z); // Camera follows the player with specified offset position
     }
+    
 }

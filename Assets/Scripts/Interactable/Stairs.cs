@@ -10,9 +10,7 @@ public class Stairs : Interactable
         // Update Interacted flag
         base.OnInteract();
 
-        int levels = 0;
-        levels++;
-        //TODO: level storage between scenes
+        GameManager.instance.AddLevel();
 
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
