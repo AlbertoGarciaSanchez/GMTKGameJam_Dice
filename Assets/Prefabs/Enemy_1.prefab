@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5016591591317263820}
   - component: {fileID: 5016591591317263821}
   - component: {fileID: 5016591591317263822}
-  - component: {fileID: 5016591591317263826}
   - component: {fileID: 5016591591317263827}
+  - component: {fileID: 4226485702247457879}
   m_Layer: 0
   m_Name: Enemy_1
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: db80215067a75c846abaf7a90bee9359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,18 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5016591591317263826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5016591591317263823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0019f8610821204d9c1cd0c51fed79b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &5016591591317263827
 Animator:
   serializedVersion: 4
@@ -140,3 +128,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4226485702247457879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5016591591317263823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e07c5cbc4639a648a0f763a0903c5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts: 4
+  player: {fileID: 0}
+  currentStatus: 1
+  speed: 2
+  rb: {fileID: 5016591591317263822}
