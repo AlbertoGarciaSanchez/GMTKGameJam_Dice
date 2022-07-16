@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: fcd4d5d9fce8bdc429ee4c1780c9a363, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alreadyInteracted: 0
-  chestOpened: {fileID: 21300000, guid: 4eb56fcc3f858fa4fbe78bb4086cff53, type: 3}
-  chestClosed: {fileID: 21300000, guid: fcd4d5d9fce8bdc429ee4c1780c9a363, type: 3}
+  chestOpened: {fileID: 21300040, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
+  chestClosed: {fileID: 21300000, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   cloverPrefab: {fileID: 69181260288027047, guid: 6f88debc9a1d9c04d9d5b203c0a9c7cf,
     type: 3}
   horseshowPrefab: {fileID: 2534551553205916444, guid: efb32135f12d4af49a395d8640603d4a,
@@ -109,6 +109,7 @@ MonoBehaviour:
     type: 3}
   sr: {fileID: 1638690529694892312}
   lB: {fileID: 0}
+  numberOfLoot: 1
 --- !u!61 &2001388411327784301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,8 +126,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.01}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 0.96875}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
