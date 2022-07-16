@@ -21,10 +21,15 @@ public class DamageManager : MonoBehaviour
 
             EventManager.instance.OnPauseChangedAction(true);
             
-		    Invoke("DamageReceivedFinish", 3f);
-		    Invoke("ResumeDamage", 3.5f);
+		    Invoke("StopRolling", 2f);
+		    Invoke("DamageReceivedFinish", 5f);
+		    Invoke("ResumeDamage", 5.5f);
         }
 
+    }
+
+    void StopRolling(){
+        EventManager.instance.OnStopRollingAction();
     }
 
     void DamageReceivedFinish(){

@@ -15,6 +15,7 @@ public class HeartManagement : MonoBehaviour
     void Start()
     {
         EventManager.instance.OnPauseChanged += pauseChanged;
+        EventManager.instance.OnStopRolling += stopRolling;
 
         // Get slots
         heartSlots = new List<GameObject>(GameObject.FindGameObjectsWithTag(diceSlotTagName));
@@ -26,6 +27,7 @@ public class HeartManagement : MonoBehaviour
 
     void OnDestroy(){
         EventManager.instance.OnPauseChanged -= pauseChanged;
+        EventManager.instance.OnStopRolling -= stopRolling;
     }
 
     void pauseChanged(bool pause)
@@ -40,18 +42,19 @@ public class HeartManagement : MonoBehaviour
                 diceRolls.Add(val);
             }
         }else{
-            
-            for(int i = 0; i < diceRolls.Count; i++){
-                int rolledDiceValue = diceRolls[i];
-
-                if(rolledDiceValue == 6){
-                    GameManager.instance.currentHearts -= 1;
-                }
-            }
-
             regenerateHearts();
+        }
+    }
 
-            EventManager.instance.OnDiceIdleAction(true);
+    void stopRolling(){
+        for(int i = 0; i < diceRolls.Count; i++){
+            int rolledDiceValue = diceRolls[i];
+
+            if(rolledDiceValue == 6){
+                GameManager.instance.currentHearts -= 1;
+
+                heartsObjects[i].GetComponent<Dice>().animator.SetBool("Destroy", true);
+            }
         }
     }
 
@@ -59,6 +62,8 @@ public class HeartManagement : MonoBehaviour
         for(int i = 0; i < heartsObjects.Count; i++){
             Destroy(heartsObjects[i]);
         }
+
+        heartsObjects = new List<GameObject>(){};
 
         for(int i = 0; i < GameManager.instance.currentHearts; i++){
             GameObject go = heartSlots[i];

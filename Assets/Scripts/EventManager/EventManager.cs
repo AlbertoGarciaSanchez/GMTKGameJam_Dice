@@ -16,6 +16,7 @@ public class EventManager : MonoBehaviour
     // Events.
     public event Action<bool> OnPauseChanged;
     public event Action<bool> OnDiceIdle;
+    public event Action OnStopRolling;
 
     #endregion
 
@@ -39,6 +40,11 @@ public class EventManager : MonoBehaviour
     public void OnDiceIdleAction(bool idle)
     {
         if (OnDiceIdle != null) OnDiceIdle(idle);
+    }
+
+    public void OnStopRollingAction()
+    {
+        if (OnStopRolling != null) OnStopRolling();
     }
 
     #endregion
