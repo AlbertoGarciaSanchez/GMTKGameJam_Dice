@@ -22,8 +22,8 @@ public class DamageManager : MonoBehaviour
             EventManager.instance.OnPauseChangedAction(true);
             
 		    Invoke("StopRolling", 2f);
-		    Invoke("DamageReceivedFinish", 3f);
-		    Invoke("ResumeDamage", 3.5f);
+		    Invoke("DamageReceivedFinish", 4f);
+		    Invoke("ResumeDamage", 4.5f);
         }
 
     }

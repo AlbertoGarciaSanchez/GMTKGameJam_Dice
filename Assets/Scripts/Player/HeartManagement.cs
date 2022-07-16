@@ -69,7 +69,9 @@ public class HeartManagement : MonoBehaviour
             GameObject go = heartSlots[i];
 
             GameObject instantiateObject = Instantiate (heartPrefab, go.transform.position, transform.rotation);
-            instantiateObject.transform.SetParent(this.transform);
+            instantiateObject.transform.SetParent(heartSlots[i].transform);
+
+            instantiateObject.transform.localScale = Vector3.one;
 
             // Instantiate Dice hearts
             heartsObjects.Add(instantiateObject);
