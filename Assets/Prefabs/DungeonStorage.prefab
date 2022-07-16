@@ -51,7 +51,7 @@ MonoBehaviour:
   dungeons_top_right_down:
   - {fileID: 649445812096466858, guid: a8bec1455ad28ab43adfa56cff819e77, type: 3}
   dungeons_left_down_right:
-  - {fileID: 649445812096466858, guid: 15b540886ddb4d7439c9a93aa9306d61, type: 3}
+  - {fileID: 649445812096466858, guid: 80d43bf5d77c4a241a9dc16467789f02, type: 3}
   dungeons_top_left_down:
   - {fileID: 649445812096466858, guid: 422e12be2ed98004791cc1b9994495a2, type: 3}
   dungeons_top_right:
@@ -74,19 +74,19 @@ MonoBehaviour:
   - {fileID: 649445812096466858, guid: abff41c018f53304bb6dc265c1cd45bf, type: 3}
   dungeons_left:
   - {fileID: 649445812096466858, guid: 3600019f8f18d3a40983bcb0f6009c70, type: 3}
-  startingDungeontop: {fileID: 649445812096466858, guid: 84b2967a3f1e10347a11684da9ccdd99,
+  startingDungeontop: {fileID: 649445812096466858, guid: 43b7e36452bb9b4489dccdd6964c93b6,
     type: 3}
-  startingDungeonright: {fileID: 649445812096466858, guid: 84b2967a3f1e10347a11684da9ccdd99,
+  startingDungeonright: {fileID: 649445812096466858, guid: 18cf54593619a6740b9548854fdebef2,
     type: 3}
-  startingDungeondown: {fileID: 649445812096466858, guid: 84b2967a3f1e10347a11684da9ccdd99,
+  startingDungeondown: {fileID: 649445812096466858, guid: 78f9f11797462004ba9161c71375a8f7,
     type: 3}
-  startingDungeonleft: {fileID: 649445812096466858, guid: 84b2967a3f1e10347a11684da9ccdd99,
+  startingDungeonleft: {fileID: 649445812096466858, guid: 06c1044b4f2c6c843a6a2024817d2f31,
     type: 3}
-  endingDungeontop: {fileID: 649445812096466858, guid: 84b2967a3f1e10347a11684da9ccdd99,
+  endingDungeontop: {fileID: 649445812096466858, guid: 39054c98722742542aa69f50d17a2e30,
     type: 3}
-  endingDungeonright: {fileID: 649445812096466858, guid: 84b2967a3f1e10347a11684da9ccdd99,
+  endingDungeonright: {fileID: 649445812096466858, guid: 287bead990ce4804e8303a47e9e59168,
     type: 3}
-  endingDungeondown: {fileID: 649445812096466858, guid: 84b2967a3f1e10347a11684da9ccdd99,
+  endingDungeondown: {fileID: 649445812096466858, guid: baab7621f2446bf4d9356696d8c170b8,
     type: 3}
-  endingDungeonleft: {fileID: 649445812096466858, guid: 84b2967a3f1e10347a11684da9ccdd99,
+  endingDungeonleft: {fileID: 649445812096466858, guid: d3b5405b5b3bae44d8dc7ac84ea731e4,
     type: 3}

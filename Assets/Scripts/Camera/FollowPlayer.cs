@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour
     public Transform player;
     public Vector3 offset = new Vector3(0, 0, -1);
 
-    void Initialize(){
+    public void Initialize(){
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
     }
       
