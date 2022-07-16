@@ -14,6 +14,6 @@ public class Stairs : Interactable
         levels++;
         //TODO: level storage between scenes
 
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 }
