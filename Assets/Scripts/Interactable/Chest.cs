@@ -22,5 +22,7 @@ public class Chest : Interactable
         sr.sprite = chestOpened; 
 
         // Perform whatever...
+        Collectable obtainedItem = this.GetComponent<LootBox>().ResolveLootBox();
+        obtainedItem.Collect();
     }
 }
