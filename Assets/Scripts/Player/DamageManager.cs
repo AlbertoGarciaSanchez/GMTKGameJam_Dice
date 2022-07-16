@@ -17,21 +17,20 @@ public class DamageManager : MonoBehaviour
     void Update()
     {
         // TO BE REMOVED
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        /*if(Input.GetKeyDown(KeyCode.Escape)){
             damageReceived= true;
 
             EventManager.instance.OnPauseChangedAction(true);
             
 		    Invoke("StopRolling", 2f);
 		    Invoke("DamageReceivedFinish", 4f);
-		    Invoke("ResumeDamage", 4.5f);
-        }
+		    Invoke("ResumeDamage", 5f);
+        }*/
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         Enemy enemy = col.gameObject.GetComponent<Enemy>();
-        Debug.Log(enemy);
         if(!damageReceived && enemy is Enemy){
             damageReceived = true;
             enemyTransform = col.gameObject.transform;
@@ -40,7 +39,7 @@ public class DamageManager : MonoBehaviour
             
 		    Invoke("StopRolling", 2f);
 		    Invoke("DamageReceivedFinish", 4f);
-		    Invoke("ResumeDamage", 4.5f);
+		    Invoke("ResumeDamage", 5f);
         }
     }
 

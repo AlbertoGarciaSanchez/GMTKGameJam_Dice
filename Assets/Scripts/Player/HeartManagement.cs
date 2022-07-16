@@ -46,7 +46,6 @@ public class HeartManagement : MonoBehaviour
             diceRolls = new List<int>(){};
             for(int i = 0; i < GameManager.instance.currentHearts; i++){
                 int val = Random.Range(1, 7);
-                Debug.Log(val);
                 diceRolls.Add(val);
             }
         }else{
@@ -62,10 +61,12 @@ public class HeartManagement : MonoBehaviour
                 GameManager.instance.currentHearts -= 1;
 
                 heartsObjects[i].GetComponent<Dice>().animator.SetBool("Destroy", true);
+            }else{
+                heartsObjects[i].GetComponent<Dice>().animator.SetBool("Saved", true);
             }
         }
 
-        EventManager.instance.OnDiceIdleAction(true);
+        //EventManager.instance.OnDiceIdleAction(true);
     }
 
     void regenerateHearts(){
@@ -81,7 +82,7 @@ public class HeartManagement : MonoBehaviour
             GameObject instantiateObject = Instantiate (heartPrefab, go.transform.position, transform.rotation);
             instantiateObject.transform.SetParent(heartSlots[i].transform);
 
-            instantiateObject.transform.localScale = Vector3.one;
+            instantiateObject.transform.localScale = new Vector3(1.75f, 1.5f, 1f);
 
             // Instantiate Dice hearts
             heartsObjects.Add(instantiateObject);

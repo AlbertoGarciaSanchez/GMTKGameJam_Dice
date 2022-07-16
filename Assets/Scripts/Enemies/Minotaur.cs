@@ -15,8 +15,8 @@ public enum TemporalBlockStatus{
 public class Minotaur : Enemy
 {
     public Transform player;
-    float radiusMov = 5.0f;
-    float radiusAttack = 1.0f;
+    float radiusMov = 8.0f;
+    float radiusAttack = 3.0f;
     public TemporalBlockStatus currentStatus = TemporalBlockStatus.WAITING;
     public float speed = 2;
     public Rigidbody2D rb;
@@ -76,6 +76,19 @@ public class Minotaur : Enemy
         {
             currentStatus = TemporalBlockStatus.RELOCATING;
         }
+
+        if (Vector2.Distance(player.position, transform.position) <= radiusAttack/4)
+        {
+            return;
+        }
+
+        Vector3 targetWorldPosition = player.transform.position;
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(targetWorldPosition.x, targetWorldPosition.y), Time.deltaTime * speed);
+
+        animator.SetFloat("Horizontal", (targetWorldPosition.x - transform.position.x));
+        animator.SetFloat("Vertical", (targetWorldPosition.y - transform.position.y));
+
+        transform.position = Vector2.MoveTowards(transform.position,  new Vector2(targetWorldPosition.x, targetWorldPosition.y), Time.deltaTime * speed * 0.7f);
     }
 
     void relocate(){
@@ -104,10 +117,10 @@ public class Minotaur : Enemy
             animator.SetFloat("Vertical", (targetWorldPosition.y - transform.position.y));
         }
         
-        /*if (Vector2.Distance(player.position, transform.position) <= radiusAttack)
+        if (Vector2.Distance(player.position, transform.position) <= radiusAttack)
         {
-            currentStatus = TemporalBlockStatus.WAITING;
-        }*/
+            currentStatus = TemporalBlockStatus.MELEE_ATTACK;
+        }
     }
 
     void waiting(){
