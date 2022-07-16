@@ -79,11 +79,12 @@ public class Enemy : MonoBehaviour
         Vector3Int playerPos = tileMap.GetComponent<Tilemap>().WorldToCell(player.position);
         int[] playerPosition = {playerPos.x  - floor.cellBounds.xMin, playerPos.y - floor.cellBounds.yMin};
         List <int[]> result =  pathFinding.Astar(tileMapDescription, myPosition, playerPosition);
-        Vector3 targetWorldPosition = floor.CellToWorld(new Vector3Int(result[0][0] + floor.cellBounds.xMin, result[0][1] + floor.cellBounds.yMin, 0));
-        // TO BE REPLACED
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(targetWorldPosition.x, targetWorldPosition.y), Time.deltaTime * speed);
 
-        
+        if (result.Count > 0)
+        {
+            Vector3 targetWorldPosition = floor.CellToWorld(new Vector3Int(result[0][0] + floor.cellBounds.xMin, result[0][1] + floor.cellBounds.yMin, 0));
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(targetWorldPosition.x, targetWorldPosition.y), Time.deltaTime * speed);
+        }
         
         if (Vector2.Distance(player.position, transform.position) <= radiusAttack)
         {
