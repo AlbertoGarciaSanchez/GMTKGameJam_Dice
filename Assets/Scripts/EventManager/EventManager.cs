@@ -15,6 +15,7 @@ public class EventManager : MonoBehaviour
 
     // Events.
     public event Action<bool> OnPauseChanged;
+    public event Action<bool> OnDiceIdle;
 
     #endregion
 
@@ -30,12 +31,14 @@ public class EventManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    /// <summary>
-    /// TransitionMainMenuAction: Event to perform the transition to main menu. 
-    /// </summary>
     public void OnPauseChangedAction(bool pause)
     {
         if (OnPauseChanged != null) OnPauseChanged(pause);
+    }
+
+    public void OnDiceIdleAction(bool idle)
+    {
+        if (OnDiceIdle != null) OnDiceIdle(idle);
     }
 
     #endregion

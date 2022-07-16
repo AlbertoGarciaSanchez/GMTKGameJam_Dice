@@ -23,11 +23,6 @@ public class PlayerMovement : PauseEntity
 
     void Update()
     {
-        // TO BE REMOVED
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            EventManager.instance.OnPauseChangedAction(!pauseStatus);
-        }
-
         // Get movement axis and if the user is attacking.
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");

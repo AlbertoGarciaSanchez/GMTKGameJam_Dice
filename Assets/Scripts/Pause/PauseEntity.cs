@@ -12,6 +12,10 @@ public class PauseEntity : MonoBehaviour
         EventManager.instance.OnPauseChanged += pauseChanged;
     }
 
+    void OnDestroy(){
+        EventManager.instance.OnPauseChanged -= pauseChanged;
+    }
+
     public bool CheckPauseStatus()
     {
         return pauseStatus;
