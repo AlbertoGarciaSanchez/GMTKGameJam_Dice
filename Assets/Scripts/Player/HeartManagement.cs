@@ -56,6 +56,8 @@ public class HeartManagement : MonoBehaviour
                 heartsObjects[i].GetComponent<Dice>().animator.SetBool("Destroy", true);
             }
         }
+
+        EventManager.instance.OnDiceIdleAction(true);
     }
 
     void regenerateHearts(){
