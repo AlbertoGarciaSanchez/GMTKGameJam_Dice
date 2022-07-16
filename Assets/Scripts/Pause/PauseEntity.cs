@@ -7,12 +7,12 @@ public class PauseEntity : MonoBehaviour
     public bool pauseStatus = false;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         EventManager.instance.OnPauseChanged += pauseChanged;
     }
 
-    void OnDestroy(){
+    public void OnDestroy(){
         EventManager.instance.OnPauseChanged -= pauseChanged;
     }
 

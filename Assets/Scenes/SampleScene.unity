@@ -892,6 +892,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5016591591317263822, guid: a51b6668f8e54764bbe2b6d94dabc8ed,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5016591591317263823, guid: a51b6668f8e54764bbe2b6d94dabc8ed,
         type: 3}
       propertyPath: m_Name
@@ -1372,6 +1377,7 @@ MonoBehaviour:
     type: 3}
   sr: {fileID: 5616493651288970590}
   lB: {fileID: 0}
+  numberOfLoot: 1
 --- !u!1001 &8890942093017150054
 PrefabInstance:
   m_ObjectHideFlags: 0

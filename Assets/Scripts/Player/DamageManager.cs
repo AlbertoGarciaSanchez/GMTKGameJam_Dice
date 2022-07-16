@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageManager : MonoBehaviour
 {
     public bool damageReceived = false;
+    public Transform enemyTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,29 @@ public class DamageManager : MonoBehaviour
 		    Invoke("DamageReceivedFinish", 4f);
 		    Invoke("ResumeDamage", 4.5f);
         }
+    }
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Enemy enemy = col.gameObject.GetComponent<Enemy>();
+        Debug.Log(enemy);
+        if(!damageReceived && enemy is Enemy){
+            damageReceived = true;
+            enemyTransform = col.gameObject.transform;
+
+            EventManager.instance.OnPauseChangedAction(true);
+            
+		    Invoke("StopRolling", 2f);
+		    Invoke("DamageReceivedFinish", 4f);
+		    Invoke("ResumeDamage", 4.5f);
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if(!damageReceived){
+            OnTriggerEnter2D(other);
+        }
     }
 
     void StopRolling(){

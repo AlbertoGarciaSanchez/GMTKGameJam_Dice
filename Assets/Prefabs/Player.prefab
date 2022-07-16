@@ -314,3 +314,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageReceived: 0
+  enemyTransform: {fileID: 0}
