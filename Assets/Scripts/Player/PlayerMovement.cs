@@ -53,22 +53,34 @@ public class PlayerMovement : PauseEntity
         }
     }
 
-    void InvokeSlashDown(){
-        GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(0, -1, 0), Quaternion.identity);
+    void InvokeSlashDown(AnimationEvent evt){
+        if(evt.animatorClipInfo.weight > 0.5){
+            GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(0, -1, 0), Quaternion.identity);
+            go.transform.position += new Vector3(0.0f, 0.5f, 0.0f);
+        }
     }
 
-    void InvokeSlashUp(){
-        GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-        go.transform.Rotate(0, 0, 180);
+    void InvokeSlashUp(AnimationEvent evt){
+        if(evt.animatorClipInfo.weight > 0.5){
+            GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            go.transform.Rotate(0, 0, 180);
+            go.transform.position -= new Vector3(0.0f, 0.5f, 0.0f);
+        }
     }
 
-    void InvokeSlashRight(){
-        GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
-        go.transform.Rotate(0, 0, 90);
+    void InvokeSlashRight(AnimationEvent evt){
+        if(evt.animatorClipInfo.weight > 0.5){
+            GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
+            go.transform.Rotate(0, 0, 90);
+            go.transform.position -= new Vector3(0.5f, 0.0f, 0.0f);
+        }
     }
 
-    void InvokeSlashLeft(){
-        GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(-1, 0, 0), Quaternion.identity);
-        go.transform.Rotate(0, 0, 270);
+    void InvokeSlashLeft(AnimationEvent evt){
+        if(evt.animatorClipInfo.weight > 0.5){
+            GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(-1, 0, 0), Quaternion.identity);
+            go.transform.Rotate(0, 0, 270);
+            go.transform.position += new Vector3(0.5f, 0.0f, 0.0f);
+        }
     }
 }
