@@ -30,17 +30,23 @@ public class DamageManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Enemy enemy = col.gameObject.GetComponent<Enemy>();
-        if(!damageReceived && enemy is Enemy){
+        Minotaur enemy = col.gameObject.GetComponent<Minotaur>();
+        if(!damageReceived && enemy is Minotaur){
             damageReceived = true;
             enemyTransform = col.gameObject.transform;
 
-            EventManager.instance.OnPauseChangedAction(true);
-            
-		    Invoke("StopRolling", 2f);
-		    Invoke("DamageReceivedFinish", 4f);
-		    Invoke("ResumeDamage", 5f);
+            OnDamage();
+
+            return;
         }
+    }
+
+    public void OnDamage(){
+        EventManager.instance.OnPauseChangedAction(true);
+        
+        Invoke("StopRolling", 2f);
+        Invoke("DamageReceivedFinish", 4f);
+        Invoke("ResumeDamage", 5f);
     }
 
     void OnTriggerStay2D(Collider2D other)

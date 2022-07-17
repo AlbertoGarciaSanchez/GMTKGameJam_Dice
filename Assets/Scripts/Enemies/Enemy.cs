@@ -6,7 +6,7 @@ public class Enemy : PauseEntity
 {
     public int hearts = 2;
     public int maxHearts = 2;
-    public int heightHealthBar = 1;
+    public float heightHealthBar = 1.0f;
     public HealthBar hB;
     public GameObject hBGO;
     
