@@ -1347,7 +1347,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Open chests & use stairs with E
+  m_text: Open chests & use doors with E
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b7add5dbda9e1b419ec1b4b5a00a055, type: 2}
   m_sharedMaterial: {fileID: -3844587472801846767, guid: 0b7add5dbda9e1b419ec1b4b5a00a055,

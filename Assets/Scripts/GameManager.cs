@@ -17,6 +17,8 @@ public class GameManager: MonoBehaviour {
 
 	public GameState gameState { get; private set; }
 
+    public AudioSource m_MyAudioSource;
+
     public int currentHearts = 4;
     public int maximumHearts = 6;
 
@@ -35,6 +37,7 @@ public class GameManager: MonoBehaviour {
             inventory = new Dictionary<string, int>(){};
             DontDestroyOnLoad(this.gameObject);
             StartCoroutine(CanvasInformation());
+            m_MyAudioSource.Play();
             SceneManager.sceneLoaded += UpdateCanvasInformation;
         }
         else
