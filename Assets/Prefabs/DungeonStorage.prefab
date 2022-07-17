@@ -54,13 +54,7 @@ MonoBehaviour:
   - {fileID: 649445812096466858, guid: 7e1ea40501e4d7549b668f4bbe123757, type: 3}
   dunegeons_left_top_right:
   - {fileID: 649445812096466858, guid: 794d94e35ea03424c957d7c48ff3364f, type: 3}
-  - {fileID: 649445812096466858, guid: b0866484822191b47a9e2989b9d7be62, type: 3}
-  - {fileID: 649445812096466858, guid: 72e07ef6bce024a479fd606670da655f, type: 3}
-  - {fileID: 649445812096466858, guid: f92f475df538f7243b5f2e3b6a8a7a3f, type: 3}
   dungeons_top_right_down:
-  - {fileID: 649445812096466858, guid: 324731bfdccd1e74098e0bcd90cd5b69, type: 3}
-  - {fileID: 649445812096466858, guid: 055707285e42ef34ca44254ff92ecdc5, type: 3}
-  - {fileID: 649445812096466858, guid: 6a16fe71aef2ea341b2d311ba8544571, type: 3}
   - {fileID: 649445812096466858, guid: a8bec1455ad28ab43adfa56cff819e77, type: 3}
   dungeons_left_down_right:
   - {fileID: 649445812096466858, guid: 80d43bf5d77c4a241a9dc16467789f02, type: 3}
@@ -73,6 +67,9 @@ MonoBehaviour:
   dungeons_down_right:
   - {fileID: 649445812096466858, guid: 50ba628e5dd48e145826c61edd867374, type: 3}
   dungeons_down_left:
+  - {fileID: 649445812096466858, guid: b0866484822191b47a9e2989b9d7be62, type: 3}
+  - {fileID: 649445812096466858, guid: 72e07ef6bce024a479fd606670da655f, type: 3}
+  - {fileID: 649445812096466858, guid: f92f475df538f7243b5f2e3b6a8a7a3f, type: 3}
   - {fileID: 649445812096466858, guid: e3e43070228fdae43a1521192c94fbf3, type: 3}
   dungeons_top_down:
   - {fileID: 649445812096466858, guid: 75778a7b0e44a934689121ffe42c8552, type: 3}
@@ -83,6 +80,9 @@ MonoBehaviour:
   dungeons_right:
   - {fileID: 649445812096466858, guid: 4dd639d98f42a6e42a6871457afb7862, type: 3}
   dungeons_down:
+  - {fileID: 649445812096466858, guid: 324731bfdccd1e74098e0bcd90cd5b69, type: 3}
+  - {fileID: 649445812096466858, guid: 055707285e42ef34ca44254ff92ecdc5, type: 3}
+  - {fileID: 649445812096466858, guid: 6a16fe71aef2ea341b2d311ba8544571, type: 3}
   - {fileID: 649445812096466858, guid: abff41c018f53304bb6dc265c1cd45bf, type: 3}
   dungeons_left:
   - {fileID: 649445812096466858, guid: 3600019f8f18d3a40983bcb0f6009c70, type: 3}
