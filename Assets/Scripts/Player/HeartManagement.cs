@@ -56,6 +56,12 @@ public class HeartManagement : MonoBehaviour
             regenerateHearts();
 
             background.SetActive(false);
+
+            if (GameManager.instance.currentHearts == 0)
+            {
+                //Defeat. Go to result screen.
+                SceneManager.LoadScene(2, LoadSceneMode.Single);
+            }
         }
     }
 
@@ -70,12 +76,6 @@ public class HeartManagement : MonoBehaviour
             }else{
                 heartsObjects[i].GetComponent<Dice>().animator.SetBool("Saved", true);
             }
-        }
-
-        if (GameManager.instance.currentHearts == 0)
-        {
-            //Defeat. Go to result screen.
-            SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
 
         //EventManager.instance.OnDiceIdleAction(true);
