@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 // Game States
 public enum GameState { PAUSED, NOT_PAUSED }
@@ -68,6 +70,7 @@ public class GameManager: MonoBehaviour {
     public void UpdateCanvasInformation(Scene scene, LoadSceneMode mode)
     {
         if (scene.buildIndex == 1) StartCoroutine(CanvasInformation());
+        if (scene.buildIndex == 2) UpdateResults();
     }
     
 
@@ -84,5 +87,20 @@ public class GameManager: MonoBehaviour {
         yield return new WaitForSeconds(5.0f);
         
         canvas.transform.GetChild(childs-1).gameObject.SetActive(false);
+    }
+
+    private void UpdateResults()
+    {
+        GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
+        int finalScore = 0;
+        finalScore = Mathf.FloorToInt(Mathf.Pow(currentLevel, 1.1f)) * 100;
+        int cloverScore = inventory.ContainsKey("Clover") ? inventory["Clover"]*10 : 0;
+        int horseshoeScore = inventory.ContainsKey("Horseshoe") ? inventory["Horseshoe"]*50 : 0;
+        finalScore += cloverScore;
+        finalScore += horseshoeScore;
+        canvas.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = "Final Score: " + finalScore;
+        canvas.transform.GetChild(8).GetComponent<TextMeshProUGUI>().text = "x" + (inventory.ContainsKey("Clover") ? inventory["Clover"] : 0) + " = " + cloverScore;
+        canvas.transform.GetChild(10).GetComponent<TextMeshProUGUI>().text = "x" + (inventory.ContainsKey("Horseshoe") ? inventory["Horseshoe"] : 0) + " = " + horseshoeScore;
+        canvas.transform.GetChild(11).GetComponent<TextMeshProUGUI>().text = currentLevel + "\nFloor";
     }
 }
