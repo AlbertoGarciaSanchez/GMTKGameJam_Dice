@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class HeartManagement : MonoBehaviour
 {
@@ -70,6 +71,14 @@ public class HeartManagement : MonoBehaviour
                 heartsObjects[i].GetComponent<Dice>().animator.SetBool("Saved", true);
             }
         }
+
+        if (GameManager.instance.currentHearts == 0)
+        {
+            //Defeat. Go to result screen.
+            SceneManager.LoadScene(2, LoadSceneMode.Single);
+        }
+
+        //EventManager.instance.OnDiceIdleAction(true);
     }
 
     void regenerateHearts(){
