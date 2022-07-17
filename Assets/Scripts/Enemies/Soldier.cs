@@ -11,7 +11,7 @@ public class Soldier : Enemy
     float radiusMov = 6.0f;
     float radiusAttack = 1.0f;
     public TemporalBlockStatus currentStatus = TemporalBlockStatus.WAITING;
-    public float speed = 1.5f;
+    public float speed = 2.0f;
     public Rigidbody2D rb;
     public GameObject tileMap;
     public Animator animator;
