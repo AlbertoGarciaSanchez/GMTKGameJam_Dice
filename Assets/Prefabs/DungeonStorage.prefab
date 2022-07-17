@@ -46,9 +46,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dungeons_AllDirections:
   - {fileID: 649445812096466858, guid: 3869b225ed585594a8e89db2972e059d, type: 3}
+  - {fileID: 649445812096466858, guid: 77ead4a36ffab294397dd1371ab4a1af, type: 3}
+  - {fileID: 649445812096466858, guid: 20cf8ae2c4359c34eadb7ea94f4e5bc8, type: 3}
+  - {fileID: 649445812096466858, guid: a6e71bfbad0cfd44ab549d7606baf72c, type: 3}
+  - {fileID: 649445812096466858, guid: 220c45b01df55f94bb6ebdf9b0815c8c, type: 3}
+  - {fileID: 649445812096466858, guid: 1f26f315be65ffb41a75231d31c7b794, type: 3}
+  - {fileID: 649445812096466858, guid: 7e1ea40501e4d7549b668f4bbe123757, type: 3}
   dunegeons_left_top_right:
   - {fileID: 649445812096466858, guid: 794d94e35ea03424c957d7c48ff3364f, type: 3}
+  - {fileID: 649445812096466858, guid: b0866484822191b47a9e2989b9d7be62, type: 3}
+  - {fileID: 649445812096466858, guid: 72e07ef6bce024a479fd606670da655f, type: 3}
+  - {fileID: 649445812096466858, guid: f92f475df538f7243b5f2e3b6a8a7a3f, type: 3}
   dungeons_top_right_down:
+  - {fileID: 649445812096466858, guid: 324731bfdccd1e74098e0bcd90cd5b69, type: 3}
+  - {fileID: 649445812096466858, guid: 055707285e42ef34ca44254ff92ecdc5, type: 3}
+  - {fileID: 649445812096466858, guid: 6a16fe71aef2ea341b2d311ba8544571, type: 3}
   - {fileID: 649445812096466858, guid: a8bec1455ad28ab43adfa56cff819e77, type: 3}
   dungeons_left_down_right:
   - {fileID: 649445812096466858, guid: 80d43bf5d77c4a241a9dc16467789f02, type: 3}
