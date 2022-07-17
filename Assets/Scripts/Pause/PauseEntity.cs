@@ -24,4 +24,8 @@ public class PauseEntity : MonoBehaviour
     public virtual void pauseChanged(bool newPause){
         pauseStatus = newPause;
     }
+    
+    public void Update()
+    {
+    }
 }

@@ -10,6 +10,7 @@ public class HeartManagement : MonoBehaviour
     public List<GameObject> heartSlots = new List<GameObject>(){};
     public List<GameObject> heartsObjects = new List<GameObject>(){};
     public List<int> diceRolls = new List<int>(){};
+    public GameObject background;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,8 @@ public class HeartManagement : MonoBehaviour
     void pauseChanged(bool pause)
     {
         if(pause){
+            background.SetActive(true);
+
             EventManager.instance.OnDiceIdleAction(false);
 
             diceRolls = new List<int>(){};
@@ -50,6 +53,8 @@ public class HeartManagement : MonoBehaviour
             }
         }else{
             regenerateHearts();
+
+            background.SetActive(false);
         }
     }
 
@@ -65,8 +70,6 @@ public class HeartManagement : MonoBehaviour
                 heartsObjects[i].GetComponent<Dice>().animator.SetBool("Saved", true);
             }
         }
-
-        //EventManager.instance.OnDiceIdleAction(true);
     }
 
     void regenerateHearts(){

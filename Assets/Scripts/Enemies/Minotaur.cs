@@ -15,10 +15,10 @@ public enum TemporalBlockStatus{
 public class Minotaur : Enemy
 {
     public Transform player;
-    float radiusMov = 8.0f;
-    float radiusAttack = 3.0f;
+    float radiusMov = 6.0f;
+    float radiusAttack = 2.0f;
     public TemporalBlockStatus currentStatus = TemporalBlockStatus.WAITING;
-    public float speed = 2;
+    public float speed = 1.5f;
     public Rigidbody2D rb;
     public GameObject tileMap;
     public Animator animator;
@@ -26,9 +26,12 @@ public class Minotaur : Enemy
     private int[,] tileMapDescription;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         base.Start();
+
+        maxHearts = 3;
+        hearts = maxHearts;
 
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         tileMap = GameObject.FindGameObjectsWithTag("Floor")[0];
@@ -43,6 +46,8 @@ public class Minotaur : Enemy
     // Update is called once per frame
     void Update()
     {
+        base.Update();
+
         // Check Pause status to avoid movement.
         if(base.CheckPauseStatus()){
             return;
@@ -77,7 +82,7 @@ public class Minotaur : Enemy
             currentStatus = TemporalBlockStatus.RELOCATING;
         }
 
-        if (Vector2.Distance(player.position, transform.position) <= radiusAttack/4)
+        if (Vector2.Distance(player.position, transform.position) <= radiusAttack/2)
         {
             return;
         }

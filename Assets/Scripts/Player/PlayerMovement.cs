@@ -8,6 +8,8 @@ public class PlayerMovement : PauseEntity
     public Rigidbody2D rb;
     public Animator animator;
 
+    public GameObject slashAnimation;
+
     // Interactable Key
     public KeyCode attackKey = KeyCode.Space;
 
@@ -26,8 +28,12 @@ public class PlayerMovement : PauseEntity
         // Get movement axis and if the user is attacking.
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
+        
         isAttacking = Input.GetKey(attackKey);
+
+        if(isAttacking && (movement.x == 0.0f) && (movement.y == 0.0f)){
+            movement.y = -1.0f;
+        }
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -45,5 +51,24 @@ public class PlayerMovement : PauseEntity
         if(!isAttacking){
             rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime); 
         }
+    }
+
+    void InvokeSlashDown(){
+        GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(0, -1, 0), Quaternion.identity);
+    }
+
+    void InvokeSlashUp(){
+        GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        go.transform.Rotate(0, 0, 180);
+    }
+
+    void InvokeSlashRight(){
+        GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
+        go.transform.Rotate(0, 0, 90);
+    }
+
+    void InvokeSlashLeft(){
+        GameObject go = Instantiate(slashAnimation, transform.position + new Vector3(-1, 0, 0), Quaternion.identity);
+        go.transform.Rotate(0, 0, 270);
     }
 }

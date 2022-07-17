@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5016591591317263823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.73, y: 3.16, z: 0.03953987}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -144,6 +144,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseStatus: 0
   hearts: 4
+  maxHearts: 2
+  heightHealthBar: 1
+  hB: {fileID: 0}
+  hBGO: {fileID: 3472825114530222374, guid: add6826c3b5546c4d8c5ed782ea5cbf5, type: 3}
   player: {fileID: 0}
   currentStatus: 1
   speed: 2
