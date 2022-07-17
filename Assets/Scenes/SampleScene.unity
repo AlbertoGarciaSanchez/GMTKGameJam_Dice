@@ -692,6 +692,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6044239696487292861, guid: ba4971d564967c942b3f708d6441432f,
+        type: 3}
+      propertyPath: dungeons_top_right_down.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044239696487292861, guid: ba4971d564967c942b3f708d6441432f,
+        type: 3}
+      propertyPath: dunegeons_left_top_right.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044239696487292861, guid: ba4971d564967c942b3f708d6441432f,
+        type: 3}
+      propertyPath: dungeons_top_right_down.Array.data[0]
+      value: 
+      objectReference: {fileID: 649445812096466858, guid: a8bec1455ad28ab43adfa56cff819e77,
+        type: 3}
+    - target: {fileID: 6044239696487292861, guid: ba4971d564967c942b3f708d6441432f,
+        type: 3}
+      propertyPath: dungeons_top_right_down.Array.data[1]
+      value: 
+      objectReference: {fileID: 649445812096466858, guid: a8bec1455ad28ab43adfa56cff819e77,
+        type: 3}
+    - target: {fileID: 6044239696487292861, guid: ba4971d564967c942b3f708d6441432f,
+        type: 3}
+      propertyPath: dungeons_top_right_down.Array.data[2]
+      value: 
+      objectReference: {fileID: 649445812096466858, guid: a8bec1455ad28ab43adfa56cff819e77,
+        type: 3}
+    - target: {fileID: 6044239696487292861, guid: ba4971d564967c942b3f708d6441432f,
+        type: 3}
+      propertyPath: dunegeons_left_top_right.Array.data[1]
+      value: 
+      objectReference: {fileID: 649445812096466858, guid: f92f475df538f7243b5f2e3b6a8a7a3f,
+        type: 3}
+    - target: {fileID: 6044239696487292861, guid: ba4971d564967c942b3f708d6441432f,
+        type: 3}
+      propertyPath: dunegeons_left_top_right.Array.data[2]
+      value: 
+      objectReference: {fileID: 649445812096466858, guid: f92f475df538f7243b5f2e3b6a8a7a3f,
+        type: 3}
     - target: {fileID: 6044239696487292862, guid: ba4971d564967c942b3f708d6441432f,
         type: 3}
       propertyPath: m_Name
